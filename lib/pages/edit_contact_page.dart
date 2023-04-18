@@ -2,7 +2,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-
 import 'package:gspresence/theme/theme.dart';
 import 'package:gspresence/utils/my_firebase.dart';
 

@@ -75,47 +75,6 @@ class _AddContactPageState extends State<AddContactPage> {
             key: _formKey,
             child: Column(
               children: [
-
-                StreamBuilder<QuerySnapshot>(
-                  stream: FirebaseFirestore.instance.collection('poste').snapshots(),
-                  builder: (context,snapshot){
-                    List<DropdownMenuItem> clientItems =[];
-                    if(!snapshot.hasData)
-                    {
-                      const CircularProgressIndicator();
-                    }else{
-                      final clients = snapshot.data?.docs.reversed.toList();
-                      clientItems.add(DropdownMenuItem(
-                        value: "0",
-                        child: Text('Selectionner un poste'),
-
-                      ));
-
-                      for(var client in clients!){
-                        clientItems.add(DropdownMenuItem(
-                          value: client.id,
-                          child: Text(
-                            client['poste']
-                          )
-                        
-                        ));
-                      }
-                    }
-                    return DropdownButton(
-                      items: clientItems, 
-                      onChanged: (clientValue){
-                        setState(() {
-                          selectedClient = clientValue;
-                        });
-
-                      print(clientValue);
-                    },
-                    value: selectedClient,
-                    isExpanded: false,
-                    );
-
-                  }),
-
                 // input nom
                 TextFormField(
                   controller: nameController,
@@ -166,8 +125,10 @@ class _AddContactPageState extends State<AddContactPage> {
                   ),
                 ),
                 const SizedBox(height: 40),
-                // input poste
-                TextFormField(
+
+                // drop poste
+                // drop poste
+                 TextFormField(
                   controller: posteController,
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -175,22 +136,14 @@ class _AddContactPageState extends State<AddContactPage> {
                     }
                     return null;
                   },
-                  keyboardType: TextInputType.text, 
+                  keyboardType: TextInputType.text,
                   textInputAction: TextInputAction.done,
                   decoration: const InputDecoration(
                     hintText: "Poste",
                     contentPadding: inputPadding,
-                    
                   ),
-                  onChanged: (clientValue){
-                        setState(() {
-                          selectedClient = clientValue;
-                        });
-
-                      print(clientValue);
-                    },
                 ),
-
+                 
                  const SizedBox(height: 40),
                 // input salaire
                 TextFormField(
