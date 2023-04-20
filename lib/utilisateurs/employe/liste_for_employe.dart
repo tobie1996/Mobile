@@ -117,6 +117,20 @@ class _HomePageState extends State<HomePage> {
             );
           }),
           //button d'ajout flottant
+
+              floatingActionButton: FloatingActionButton.extended(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AddContactPage(),
+                  ),
+                );
+              },
+                label: const Text("Ajouter un Employe"),
+                icon: const Icon(IconlyBroken.document),
+              ),
+      
     );
   }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gspresence/menu/homeMenu.dart';
-import 'package:gspresence/pages/add_contact_page.dart';
-import 'package:gspresence/pages/home_page.dart';
 import 'package:gspresence/poste/home_poste.dart';
+
+import '../utilisateurs/employe/liste_for_employe.dart';
+
 
 class MyMenu extends StatelessWidget {
   const MyMenu({Key? key}) : super(key: key);
@@ -36,7 +37,7 @@ class MyMenu extends StatelessWidget {
               title: 'Poste',
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                  return const Homeposte();
+                  return const HomPage();
                 }));
               },
             ),

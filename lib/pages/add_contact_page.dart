@@ -20,7 +20,6 @@ class _AddContactPageState extends State<AddContactPage> {
   final emailController = TextEditingController();
   final posteController = TextEditingController();
   final salaireController = TextEditingController();
-   String selectedClient ="0";
   @override
   void dispose() {
     super.dispose();
